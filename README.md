@@ -9,8 +9,7 @@ A ferramenta roda dentro da página do FireGames como overlay com Shadow DOM, de
 ```
 .
 ├── fge/            ← código-fonte modular (build com esbuild)
-├── fge.js          ← bundle single-file legado (cola direto no console)
-└── docs/           ← specs e documentação de design
+└── fge.js          ← bundle single-file legado (cola direto no console)
 ```
 
 ## Build (pasta `fge/`)
@@ -45,7 +44,7 @@ src/
 └── features/       inventory · editor · keychain · stickers · create · servers
 ```
 
-Cada feature exporta `init({ store, bus })` e se auto-registra. Detalhes em [fge/README.md](fge/README.md) e na spec em [docs/superpowers/specs/2026-04-28-fge-design.md](docs/superpowers/specs/2026-04-28-fge-design.md).
+Cada feature exporta `init({ store, bus })` e se auto-registra. Mais detalhes em [fge/README.md](fge/README.md).
 
 ## API pública no console
 
