@@ -1,0 +1,28 @@
+# Pasta do client front (não publicar)
+firegamesclientfront/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build
+dist/
+*.tsbuildinfo
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Claude / superpowers locais
+.claude/

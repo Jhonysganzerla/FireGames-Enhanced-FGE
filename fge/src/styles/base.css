@@ -1,0 +1,40 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:host { font-family: 'Segoe UI', system-ui, sans-serif; }
+
+input[type=text], input[type=number], select, textarea {
+  width: 100%; background: #0a0a18; border: 1px solid #272743;
+  border-radius: 6px; color: #dde0ff; padding: 7px 10px;
+  font-size: 13px; outline: none; transition: border-color .1s;
+}
+input[type=text]:focus, input[type=number]:focus, select:focus { border-color: #818cf8; }
+select option { background: #12121f; }
+
+.chk-row { display: flex; align-items: center; gap: 8px; margin-bottom: 14px; }
+.chk-row label { font-size: 13px; color: #ccd; cursor: pointer; }
+input[type=checkbox] { width: 15px; height: 15px; cursor: pointer; accent-color: #818cf8; }
+
+.row { display: flex; gap: 14px; margin-bottom: 14px; }
+.row .fld { flex: 1; margin-bottom: 0; }
+.fld { margin-bottom: 14px; }
+.lbl { font-size: 10px; color: #666; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+
+.hint { font-size: 11px; color: #444; text-align: center; padding: 20px 0; }
+.hide-this { display: none !important; }
+
+/* Toast */
+#toast {
+  display: none; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%) scale(.92);
+  padding: 14px 28px; border-radius: 10px;
+  font-size: 14px; font-weight: 700; letter-spacing: .3px;
+  pointer-events: none; z-index: 30;
+  box-shadow: 0 10px 30px rgba(0,0,0,.5);
+  animation: toast-in .22s ease-out forwards;
+}
+@keyframes toast-in {
+  0%   { transform: translate(-50%, -50%) scale(.85); opacity: 0; }
+  100% { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+}
+.t-info    { background: #1e1e35; color: #ccd; border: 1px solid #2a2a50; }
+.t-success { background: #0d2e1a; color: #4eff8a; border: 1px solid #1a5030; }
+.t-error   { background: #2e0d0d; color: #ff6666; border: 1px solid #5a1a1a; }
