@@ -13,8 +13,6 @@ A ferramenta roda dentro da página do FireGames como overlay com Shadow DOM, de
 └── docs/           ← specs e documentação de design
 ```
 
-> A pasta `firegamesclientfront/` é local e **não** faz parte deste repositório.
-
 ## Build (pasta `fge/`)
 
 ```bash
