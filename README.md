@@ -22,30 +22,57 @@ npm run dev           # watch mode
 npm run bookmarklet   # gera dist/bookmarklet.txt
 ```
 
-## Como usar
+## Como usar (jeito fácil)
 
-Formas de carregar o painel:
+A forma mais simples é criar um **favorito no navegador** com o código abaixo e clicar nele dentro do FireGames. Pronto, o painel abre.
 
-- **Console** — copia `fge.js` (raiz) ou `fge/dist/fge.user.js` e cola no DevTools da página do FireGames.
-- **Bookmarklet (loader, recomendado)** — bookmarklet curto que carrega o script direto do CDN. Funciona inclusive no Firefox:
-  ```js
-  javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Jhonysganzerla/FireGames-Enhanced-FGE@master/fge.js?_='+Date.now();document.head.appendChild(s);})();
-  ```
-- **Bookmarklet (bundle inline)** — roda `npm run bookmarklet` e cola `dist/bookmarklet.txt` num favorito (gera o bundle inteiro inline, pode ser rejeitado por navegadores que limitam o tamanho do campo URL).
-- **Tampermonkey** — aponta um `@require` para o raw deste repositório.
+**1. Copia esta URL inteira** (começa com `javascript:`):
 
-Na primeira execução o painel tenta capturar o token sozinho. Se não conseguir, abre um modal pedindo pra você colar.
+```
+javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Jhonysganzerla/FireGames-Enhanced-FGE@master/fge.js?_='+Date.now();document.head.appendChild(s);})();
+```
 
-### Instalando o bookmarklet no Firefox
+**2. Cria um favorito novo** com:
+- **Nome:** `FGE`
+- **URL/Endereço:** o código que você copiou acima
 
-O Firefox (84+) **remove** o prefixo `javascript:` quando você cria um favorito pelo diálogo "Adicionar favorito". Workaround:
+**3. Abre o site do FireGames e clica no favorito.** O painel aparece sozinho.
 
-1. Abre o gerenciador de favoritos: `Ctrl+Shift+O` (ou *Favoritos → Gerenciar favoritos*).
-2. Clica em qualquer favorito existente com o botão direito → **Novo favorito…**
-3. Em **Nome** põe `FGE` e em **URL** cola o código do bookmarklet (loader acima — começa com `javascript:`).
-4. Salva. Agora basta clicar no favorito enquanto estiver na página do FireGames.
+Na primeira execução ele tenta pegar seu token automaticamente. Se não conseguir, abre um campo pedindo pra colar.
 
-Se mesmo assim ele truncar o `javascript:`, edita o favorito depois de salvo e cola a URL no campo — o gerenciador aceita.
+### Passo a passo por navegador
+
+<details>
+<summary><b>Firefox</b> (clique para abrir)</summary>
+
+O Firefox bloqueia `javascript:` no diálogo padrão de "Adicionar favorito". Faça pelo gerenciador:
+
+1. Aperta `Ctrl+Shift+O` (abre o gerenciador de favoritos).
+2. Botão direito em qualquer pasta → **Adicionar favorito…**
+3. Nome: `FGE` · URL: cola o código.
+4. Salvar.
+5. Se ele apagar o `javascript:` ao salvar, abre o favorito recém-criado, edita o campo URL e cola de novo — o gerenciador aceita.
+
+</details>
+
+<details>
+<summary><b>Chrome / Edge / Brave</b></summary>
+
+1. Mostra a barra de favoritos: `Ctrl+Shift+B`.
+2. Botão direito na barra → **Adicionar página…**
+3. Nome: `FGE` · URL: cola o código.
+4. Salvar.
+
+</details>
+
+<details>
+<summary><b>Outras formas (avançado)</b></summary>
+
+- **Console do navegador (F12):** abre o DevTools no FireGames, vai na aba **Console**, cola o conteúdo de [`fge.js`](fge.js) e dá Enter.
+- **Tampermonkey / Violentmonkey:** cria um userscript com `@require` apontando para `https://cdn.jsdelivr.net/gh/Jhonysganzerla/FireGames-Enhanced-FGE@master/fge.js`.
+- **Build local:** veja [`fge/`](fge/) para gerar o bundle a partir do código-fonte modular.
+
+</details>
 
 ## Arquitetura (resumo)
 
