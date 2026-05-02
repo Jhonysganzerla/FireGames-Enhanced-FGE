@@ -29,7 +29,7 @@ A forma mais simples é criar um **favorito no navegador** com o código abaixo 
 **1. Copia esta URL inteira** (começa com `javascript:`):
 
 ```
-javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Jhonysganzerla/FireGames-Enhanced-FGE@master/fge.js?_='+Date.now();document.head.appendChild(s);})();
+javascript:(function(){var s=document.createElement('script');s.src='https://is.gd/fgeload?_='+Date.now();document.head.appendChild(s);})();
 ```
 
 **2. Cria um favorito novo** com:
@@ -69,7 +69,7 @@ O Firefox bloqueia `javascript:` no diálogo padrão de "Adicionar favorito". Fa
 <summary><b>Outras formas (avançado)</b></summary>
 
 - **Console do navegador (F12):** abre o DevTools no FireGames, vai na aba **Console**, cola o conteúdo de [`fge.js`](fge.js) e dá Enter.
-- **Tampermonkey / Violentmonkey:** cria um userscript com `@require` apontando para `https://cdn.jsdelivr.net/gh/Jhonysganzerla/FireGames-Enhanced-FGE@master/fge.js`.
+- **Tampermonkey / Violentmonkey:** cria um userscript com `@require` apontando para `https://is.gd/fgeload`.
 - **Build local:** veja [`fge/`](fge/) para gerar o bundle a partir do código-fonte modular.
 
 </details>
